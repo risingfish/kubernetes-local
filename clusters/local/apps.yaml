@@ -9,9 +9,7 @@ spec:
   interval: 1m
   retryInterval: 2m
   timeout: 5m
-  sourceRef:
-    kind: ExternalArtifact
-    name: apps
-  path: ./local
-  prune: false
-  wait: true
+
+resources:
+  - ../../apps/base/cilium
+  - ../../apps/base/prometheus/
