@@ -13,5 +13,5 @@ spec:
     kind: ExternalArtifact
     name: apps
   path: ./local
-  prune: true
+  prune: false
   wait: true
