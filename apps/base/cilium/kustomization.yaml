@@ -4,5 +4,4 @@ metadata:
   name: local-cluster
   namespace: flux-system
 resources:
-  - ../base/prometheus
-  - ../base/cilium
+  - namespace.yaml
