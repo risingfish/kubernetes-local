@@ -9,7 +9,7 @@ spec:
   timeout: 5m
   sourceRef:
     kind: GitRepository
-    name: ../../apps/local
+    name: flux-system
   path: ./apps/local
   prune: true
   wait: true
