@@ -10,6 +10,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: ../../apps/local
-  path: ./staging
+  path: ./apps/local
   prune: true
   wait: true
