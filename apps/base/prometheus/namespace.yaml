@@ -5,4 +5,4 @@ metadata:
   labels:
     environment: local
   annotations:
-    description: "Namespace for prometheus monitoring system"
+    description: "Namespace for prometheus monitoring system pods"
