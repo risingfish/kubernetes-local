@@ -7,6 +7,8 @@ spec:
   releaseName: kube-prometheus-stack
   interval: 5m # How often to reconcile the release
   timeout: 5m0s
+  dependsOn:
+  - name: monitoring
 
   # Ensure the Helm Controller manages and updates Custom Resource Definitions (CRDs).
   # This is a key feature of Flux's Helm integration.
