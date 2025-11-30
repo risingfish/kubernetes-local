@@ -1,8 +1,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
+  finalizers:
+    - finalizers.fluxcd.io
   name: prometheus-community
   namespace: monitoring
 spec:
-  interval: 10m0s # How often Flux should check for updates
+  interval: 10m0s
   url: https://prometheus-community.github.io/helm-charts
