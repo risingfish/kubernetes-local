@@ -11,6 +11,8 @@ spec:
   # Ensure the Helm Controller manages and updates Custom Resource Definitions (CRDs).
   # This is a key feature of Flux's Helm integration.
   install:
+    remediation:
+        retries: 3
     crds: CreateReplace
 
   upgrade:
@@ -19,12 +21,17 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
+      version: '79.9.*'
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
         namespace: monitoring
+      interval: 5m
 
   valuesFrom:
     - kind: ConfigMap
       name: kube-prometheus-stack-values
       valuesKey: values.yaml
+
+  driftDetection:
+    mode: warn
