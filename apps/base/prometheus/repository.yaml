@@ -7,3 +7,4 @@ spec:
   type: "oci"
   interval: 5m0s
   url: oci://ghcr.io/prometheus-community/charts/kube-prometheus-stack
+  prune: true

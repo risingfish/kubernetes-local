@@ -6,12 +6,3 @@ metadata:
     environment: local
   annotations:
     description: "Namespace for prometheus monitoring system pods"
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: monitoring2
-  labels:
-    environment: local
-  annotations:
-    description: "Test namespace"
