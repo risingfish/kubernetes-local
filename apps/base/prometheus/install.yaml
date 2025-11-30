@@ -7,7 +7,6 @@ spec:
   releaseName: kube-prometheus-stack
   interval: 5m # How often to reconcile the release
   timeout: 5m0s
-  prune: true
   dependsOn:
   - name: monitoring
 
