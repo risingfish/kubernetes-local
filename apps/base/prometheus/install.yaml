@@ -28,10 +28,10 @@ spec:
         namespace: monitoring
       interval: 5m
 
-  valuesFrom:
-    - kind: ConfigMap
-      name: values.yaml
-      valuesKey: values.yaml
+  values:
+    prometheus:
+      prometheusSpec:
+        retention: "45d"
 
   driftDetection:
     mode: warn
