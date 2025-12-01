@@ -1,0 +1,4 @@
+prometheus:
+  prometheusSpec:
+    retention: "60d"
+    retentionSize: "50GiB"

@@ -30,7 +30,7 @@ spec:
 
   valuesFrom:
     - kind: ConfigMap
-      name: kube-prometheus-stack-values
+      name: kps-values
       valuesKey: values.yaml
 
   driftDetection:
