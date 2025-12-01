@@ -27,7 +27,11 @@ spec:
         name: prometheus-community
         namespace: monitoring
       interval: 5m
-      valuesFile: kps-values.yaml
+
+    valuesFrom:
+      - kind: ConfigMap
+        name: values.yaml
+        valuesKey: values.yaml
 
   driftDetection:
     mode: warn
