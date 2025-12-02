@@ -15,6 +15,6 @@ spec:
           # Replace with your on-premises router's ASN.
           peerASN: 65550
           # Replace with your router's IP address.
-          peerAddress: "192.168.3.1/32"
+          peerAddress: "192.168.3.1"
           peerConfigRef:
             name: "cilium-bgp-peer-config"
