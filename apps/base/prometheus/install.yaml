@@ -29,6 +29,13 @@ spec:
       interval: 5m
 
   values:
+    grafana:
+      ingress:
+        enabled: true
+        ingressClassName: cilium
+        hosts:
+          - grafana.forthebrew.com
+        path: /
     prometheus:
       prometheusSpec:
         retention: "45d"
