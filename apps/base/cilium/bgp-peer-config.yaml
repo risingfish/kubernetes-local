@@ -1,0 +1,13 @@
+apiVersion: cilium.io/v2
+kind: CiliumBGPPeerConfig
+metadata:
+  name: cilium-peer-config
+spec:
+  families:
+    - afi: ipv4
+      safi: unicast
+  gracefulRestart:
+    enabled: true
+  advertisements:
+    matchLabels:
+      advertise: "bgp"
