@@ -35,7 +35,7 @@ spec:
         ingressClassName: "cilium"
         hosts:
           - grafana.forthebrew.com
-        pathType: prefix
+        pathType: Prefix
       grafana.ini:
         server:
           root_url: "grafana.forthebrew.com"
