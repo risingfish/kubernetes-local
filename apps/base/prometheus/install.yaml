@@ -32,13 +32,23 @@ spec:
     grafana:
       ingress:
         enabled: true
-        ingressClassName: cilium
+        ingressClassName: "cilium"
         hosts:
           - grafana.forthebrew.com
-        path: /
+        pathType: prefix
+      grafanaIni:
+        server:
+          root_url: "grafana.forthebrew.com"
     prometheus:
+      ingress:
+        enabled: true
+        ingressClassName: "cilium"
+        hosts:
+          - prometheus.forthebrew.com
+        pathType: Prefix
       prometheusSpec:
         retention: "45d"
+        externalUrl: "http://prometheus.forthebrew.com"
 
   driftDetection:
     mode: warn
