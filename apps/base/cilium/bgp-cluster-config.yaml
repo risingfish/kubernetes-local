@@ -1,14 +1,20 @@
+# bgp-cluster-config.yaml
 apiVersion: cilium.io/v2
 kind: CiliumBGPClusterConfig
 metadata:
   name: cilium-bgp-config
 spec:
+  # Optional: use nodeSelector to apply this config to specific nodes
+  # nodeSelector:
+  #   matchLabels:
+  #     bgp-speaker: enabled
   bgpInstances:
     - name: default
       localASN: 65555
       peers:
-        - peerAddress: 192.168.3.1
+        - name: "gateway-peer"
+          peerAddress: 192.168.3.1
           peerASN: 65000
-      serviceAdvertisements:
-        - aggregation:
-            mode: subnet
+          # Reference the common peer configuration defined in Step 3
+          peerConfigRef:
+            name: cilium-peer-config

@@ -1,9 +1,12 @@
 apiVersion: cilium.io/v2
 kind: CiliumBGPAdvertisement
 metadata:
-  name: advertise-pod-cidrs
+  name: bgp-advertisement-lb
   labels:
-    advertise: "bgp"
+    # A label to link this policy to a peer config
+    bgp.cilium.io/advertise: lb-services
 spec:
+  # The empty 'advertisements' list with 'LoadBalancerIP' type implies
+  # it will advertise any service IP assigned from the IP pool above.
   advertisements:
-    - advertisementType: "PodCIDR"
+    - advertisementType: LoadBalancerIP
