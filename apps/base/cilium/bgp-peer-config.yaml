@@ -1,16 +1,14 @@
-# bgp-peer-config.yaml
 apiVersion: cilium.io/v2
 kind: CiliumBGPPeerConfig
 metadata:
   name: cilium-peer-config
 spec:
-  # Link the advertisement policy using a selector matching the labels from Step 2
+  # This selector links back to the "bgp-advertisement-lb" resource via its label
   advertisements:
     - selector:
         matchLabels:
           bgp.cilium.io/advertise: lb-services
-  # Optional configurations (timers, graceful restart, etc.) can be added here
-  # Example:
-  # families:
-  #   - afi: ipv4
-  #     safi: unicast
+  # Optional BGP families
+  families:
+    - afi: ipv4
+      safi: unicast

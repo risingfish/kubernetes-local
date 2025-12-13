@@ -3,10 +3,8 @@ kind: CiliumBGPAdvertisement
 metadata:
   name: bgp-advertisement-lb
   labels:
-    # A label to link this policy to a peer config
+    # A label selector used to link this to the peer config
     bgp.cilium.io/advertise: lb-services
 spec:
-  # The empty 'advertisements' list with 'LoadBalancerIP' type implies
-  # it will advertise any service IP assigned from the IP pool above.
   advertisements:
     - advertisementType: LoadBalancerIP
