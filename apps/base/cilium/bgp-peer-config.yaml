@@ -3,12 +3,7 @@ kind: CiliumBGPPeerConfig
 metadata:
   name: cilium-peer-config
 spec:
-  # This selector links back to the "bgp-advertisement-lb" resource via its label
-  advertisements:
-    - selector:
-        matchLabels:
-          bgp.cilium.io/advertise: lb-services
-  # Optional BGP families
+  # This resource only holds general session parameters (timers, families, auth)
   families:
     - afi: ipv4
       safi: unicast

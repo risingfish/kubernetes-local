@@ -7,12 +7,6 @@ metadata:
 spec:
   advertisements:
     - advertisementType: Service
-      # Nested service addresses field specifies *which* IPs to advertise
       service:
         addresses:
           - LoadBalancerIP
-        # Optional: You can add a serviceSelector here to only advertise 
-        # IPs of services that match certain labels.
-        # selector:
-        #   matchLabels:
-        #     app: example-app
