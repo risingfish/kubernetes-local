@@ -3,8 +3,16 @@ kind: CiliumBGPAdvertisement
 metadata:
   name: bgp-advertisement-lb
   labels:
-    # A label selector used to link this to the peer config
     bgp.cilium.io/advertise: lb-services
 spec:
   advertisements:
-    - advertisementType: LoadBalancerIP
+    - advertisementType: Service
+      # Nested service addresses field specifies *which* IPs to advertise
+      service:
+        addresses:
+          - LoadBalancerIP
+        # Optional: You can add a serviceSelector here to only advertise 
+        # IPs of services that match certain labels.
+        # selector:
+        #   matchLabels:
+        #     app: example-app
