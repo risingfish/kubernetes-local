@@ -18,7 +18,3 @@ spec:
           # Reference the common peer configuration defined in Step 3
           peerConfigRef:
             name: cilium-peer-config
-  serviceAdvertisements:
-    # Use 'subnet' mode to advertise the 192.168.3.128/25 CIDR block itself
-    - aggregation:
-        mode: subnet
