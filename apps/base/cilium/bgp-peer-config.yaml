@@ -7,3 +7,11 @@ spec:
   families:
     - afi: ipv4
       safi: unicast
+      advertisements:
+        matchLabels:
+          bgp.cilium.io/advertise: "true"
+  timers:
+    holdTimeSeconds: 90
+    keepAliveTimeSeconds: 30
+  # Set to > 1 if the router is not directly connected (L3 hop away)
+  ebgpMultihop: 1
