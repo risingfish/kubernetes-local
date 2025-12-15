@@ -35,33 +35,29 @@ spec:
         labels:
           lb-ipam: "true"
     grafana:
+      enabled: true
       service:
-        type: LoadBalancer
-        labels:
-          lb-ipam: "true"
+        type: ClusterIP
       ingress:
         enabled: true
-        ingressClassName: "cilium"
+        ingressClassName: cilium
         hosts:
           - grafana.forthebrew.com
+        path: /
         pathType: Prefix
-      grafana.ini:
-        server:
-          root_url: "http://grafana.forthebrew.com"
     prometheus:
       ingress:
         enabled: true
-        ingressClassName: "cilium"
+        ingressClassName: cilium
         hosts:
           - prometheus.forthebrew.com
+        paths:
+          - /
         pathType: Prefix
       prometheusSpec:
         retention: "45d"
-        externalUrl: "http://prometheus.forthebrew.com"
         service:
-          type: LoadBalancer
-          labels:
-            lb-ipam: "true"
+          type: ClusterIP
 
   driftDetection:
     mode: warn
