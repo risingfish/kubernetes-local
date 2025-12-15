@@ -29,7 +29,16 @@ spec:
       interval: 12h
 
   values:
+    alertmanager:
+      service:
+        type: LoadBalancer
+        labels:
+          lb-ipam: "true"
     grafana:
+      service:
+        type: LoadBalancer
+        labels:
+          lb-ipam: "true"
       ingress:
         enabled: true
         ingressClassName: "cilium"
@@ -49,6 +58,10 @@ spec:
       prometheusSpec:
         retention: "45d"
         externalUrl: "http://prometheus.forthebrew.com"
+        service:
+          type: LoadBalancer
+          labels:
+            lb-ipam: "true"
 
   driftDetection:
     mode: warn
