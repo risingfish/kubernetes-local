@@ -3,8 +3,5 @@ kind: CiliumLoadBalancerIPPool
 metadata:
   name: lb-pool-192-168-3-128
 spec:
-  blocks:
+  cidrs:
     - cidr: 192.168.3.128/25
-  serviceSelector:
-    matchLabels:
-      io.cilium/lb-ipam-pool: "lb-pool-128"
