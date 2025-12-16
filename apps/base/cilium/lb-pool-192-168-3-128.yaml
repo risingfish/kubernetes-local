@@ -7,4 +7,4 @@ spec:
     - cidr: 192.168.3.128/25
   serviceSelector:
     matchLabels:
-      lb-ipam: true
+      lb-ipam: "true"
