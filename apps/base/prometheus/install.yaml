@@ -42,7 +42,7 @@ spec:
           # Explicitly request dedicated mode if not set globally
           ingress.cilium.io/loadbalancer-mode: "dedicated"
           # Propagate labels to the hidden LoadBalancer service for IPAM
-          service.cilium.io/labels: "io.cilium/lb-ipam-pool=lb-pool-128"
+          service.cilium.io/labels: "lb-ipam: true"
     prometheus:
       ingress:
         enabled: true
@@ -54,7 +54,7 @@ spec:
         pathType: Prefix
         annotations:
           ingress.cilium.io/loadbalancer-mode: "dedicated"
-          service.cilium.io/labels: "io.cilium/lb-ipam-pool=lb-pool-128"
+          service.cilium.io/labels: "lb-ipam: true"
       prometheusSpec:
         retention: "45d"
 
