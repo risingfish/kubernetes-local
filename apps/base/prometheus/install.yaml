@@ -29,11 +29,6 @@ spec:
       interval: 12h
 
   values:
-    alertmanager:
-      service:
-        type: LoadBalancer
-        labels:
-          lb-ipam: "true"
     grafana:
       enabled: true
       ingress:
@@ -47,7 +42,7 @@ spec:
           # Explicitly request dedicated mode if not set globally
           ingress.cilium.io/loadbalancer-mode: "dedicated"
           # Propagate labels to the hidden LoadBalancer service for IPAM
-          service.cilium.io/labels: "lb-ipam=true"
+          service.cilium.io/labels: "io.cilium/lb-ipam-pool=lb-pool-128"
     prometheus:
       ingress:
         enabled: true
@@ -59,7 +54,7 @@ spec:
         pathType: Prefix
         annotations:
           ingress.cilium.io/loadbalancer-mode: "dedicated"
-          service.cilium.io/labels: "lb-ipam=true"
+          service.cilium.io/labels: "io.cilium/lb-ipam-pool=lb-pool-128"
       prometheusSpec:
         retention: "45d"
 
