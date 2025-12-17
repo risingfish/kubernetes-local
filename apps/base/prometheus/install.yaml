@@ -30,12 +30,11 @@ spec:
 
   values:
     grafana:
-      enabled: true
       ingress:
         enabled: true
         ingressClassName: cilium
         hosts:
-          - grafana.forthebrew.com
+          - grafana.k8s.example.com
         path: /
         pathType: Prefix
         annotations:
@@ -48,7 +47,7 @@ spec:
         enabled: true
         ingressClassName: cilium
         hosts:
-          - prometheus.forthebrew.com
+          - prometheus.k8s.example.com
         paths:
           - /
         pathType: Prefix
