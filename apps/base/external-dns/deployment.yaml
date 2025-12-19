@@ -26,6 +26,14 @@ spec:
         namespace: external-dns
       interval: 12h
   values:
+    provider: rfc2136
+    rfc2136:
+      host: "192.168.3.1" # IP of your BIND server
+      port: 53
+      zone: "k8s.forthebrew.com"
+      tsigKeyname: "externaldns-key"
+      tsigSecret: "<your-key-secret>" # Use secretRef in production for better security
+      tsigSecretAlg: "hmac-sha256"
     domainFilters:
       - "forthebrew.com"
     sources:
