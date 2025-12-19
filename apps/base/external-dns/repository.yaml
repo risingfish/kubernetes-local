@@ -3,8 +3,9 @@ kind: HelmRepository
 metadata:
   finalizers:
     - finalizers.fluxcd.io
-  name: external-dns
+  name: external-dns-helm-repo
   namespace: external-dns
 spec:
   interval: 10m0s
   url: https://kubernetes-sigs.github.io/external-dns/
+
