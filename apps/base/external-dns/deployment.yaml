@@ -18,10 +18,16 @@ spec:
 
   chart:
     spec:
-      chart: extrernal-dns
-      version: '0.20.*'
+      chart: external-dns
+      version: '1.19.*'
       sourceRef:
         kind: HelmRepository
         name: external-dns-helm-repo
         namespace: external-dns
       interval: 12h
+  values:
+    domainFilters:
+      - "forthebrew.com"
+    sources:
+      - ingress
+    txtOwnerId: local-cluster
