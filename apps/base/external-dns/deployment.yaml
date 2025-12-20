@@ -25,6 +25,7 @@ spec:
         name: external-dns-helm-repo
         namespace: external-dns
       interval: 12h
+
   values:
     provider: rfc2136
     rfc2136:
@@ -32,10 +33,15 @@ spec:
       port: 53
       zone: "k8s.forthebrew.com"
       tsigKeyname: "externaldns-key"
-      tsigSecret: "<your-key-secret>" # Use secretRef in production for better security
       tsigSecretAlg: "hmac-sha256"
     domainFilters:
       - "forthebrew.com"
     sources:
       - ingress
     txtOwnerId: local-cluster
+
+  valuesFrom:
+    - kind: Secret
+      name: external-dns-credentials
+      valuesKeys: tsig-secret
+      targetPath: rfc2136.tsigSecret
