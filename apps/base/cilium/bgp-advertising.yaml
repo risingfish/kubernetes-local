@@ -3,7 +3,7 @@ kind: CiliumBGPAdvertisement
 metadata:
   name: bgp-advertisement-lb
   labels:
-    bgp.cilium.io/advertise: lb-services
+    bgp.cilium.io/advertise: "true"
 spec:
   advertisements:
     - advertisementType: Service
