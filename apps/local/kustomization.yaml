@@ -4,7 +4,6 @@ metadata:
   name: local-cluster
   namespace: flux-system
 resources:
-  - secrets-enc.yaml
   - ../base/cilium
   - ../base/external-dns
   - ../base/prometheus
