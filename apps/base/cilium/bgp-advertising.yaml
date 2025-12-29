@@ -6,7 +6,10 @@ metadata:
     bgp.cilium.io/advertise: "true"
 spec:
   advertisements:
-    - advertisementType: Service
+    - advertisementType: "Service"
       service:
         addresses:
           - LoadBalancerIP
+      selector: # <-- select Services to advertise
+        matchLabel:
+          lb-ipam: "true"

@@ -9,8 +9,9 @@ spec:
   #   matchLabels:
   #     bgp-speaker: enabled
   bgpInstances:
-    - name: default
+    - name: "default-bgp"
       localASN: 65555
+      localPort: 179
       peers:
         - name: "gateway-peer"
           peerAddress: 192.168.3.1
