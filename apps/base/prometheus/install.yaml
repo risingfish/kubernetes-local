@@ -37,9 +37,8 @@ spec:
           - grafana.forthebrew.com
         path: /
         pathType: Prefix
-        labels:
-          bgp.cilium.io/advertise: "true"
         annotations:
+          bgp.cilium.io/advertise: "true"
           # Explicitly request dedicated mode if not set globally
           ingress.cilium.io/loadbalancer-mode: "dedicated"
           # Propagate labels to the hidden LoadBalancer service for IPAM
@@ -56,7 +55,6 @@ spec:
         annotations:
           ingress.cilium.io/loadbalancer-mode: "dedicated"
           service.cilium.io/labels: "lb-ipam: true"
-        labels:
           bgp.cilium.io/advertise: "true"
 
       prometheusSpec:
