@@ -34,7 +34,7 @@ spec:
         enabled: true
         ingressClassName: cilium
         hosts:
-          - grafana.k8s.example.com
+          - grafana.forthebrew.com
         path: /
         pathType: Prefix
         annotations:
@@ -47,7 +47,7 @@ spec:
         enabled: true
         ingressClassName: cilium
         hosts:
-          - prometheus.k8s.example.com
+          - prometheus.forthebrew.com
         paths:
           - /
         pathType: Prefix
@@ -55,8 +55,6 @@ spec:
           ingress.cilium.io/loadbalancer-mode: "dedicated"
           service.cilium.io/labels: "lb-ipam: true"
       prometheusSpec:
-        service:
-          type: ClusterIP
         retention: "45d"
 
   driftDetection:
