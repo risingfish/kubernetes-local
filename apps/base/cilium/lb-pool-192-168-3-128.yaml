@@ -4,7 +4,7 @@ metadata:
   name: lb-pool-192-168-3-128
 spec:
   blocks:
-    - cidr: 192.168.3.128/25
+    - cidr: 192.168.4.1/24
   serviceSelector:
     matchLabels:
       lb-ipam: "true"
