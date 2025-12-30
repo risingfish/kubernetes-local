@@ -35,7 +35,8 @@ spec:
         ingressClassName: cilium
         hosts:
           - grafana.forthebrew.com
-        path: /
+        paths:
+          - /
         pathType: Prefix
         annotations:
           # Explicitly request dedicated mode if not set globally
@@ -58,6 +59,17 @@ spec:
         service:
           type: ClusterIP
         retention: "45d"
+
+    alertmanager:
+      ingress:
+        enabled: true
+        ingressClassName: cilium
+        annotations: {}
+        hosts:
+          - alertmanager.forthebrew.com
+        paths:
+          - /
+        pathType: Prefix
 
   driftDetection:
     mode: warn
