@@ -1,13 +1,11 @@
-# bgp-cluster-config.yaml
 apiVersion: cilium.io/v2
 kind: CiliumBGPClusterConfig
 metadata:
   name: cilium-bgp-config
 spec:
-  # Optional: use nodeSelector to apply this config to specific nodes
-  # nodeSelector:
-  #   matchLabels:
-  #     bgp-speaker: enabled
+  nodeSelector:
+    matchLabels:
+      bgp.cilium.io/advertise: "true"
   bgpInstances:
     - name: default
       localASN: 65555
