@@ -4,8 +4,7 @@ metadata:
   name: cilium-bgp-config
 spec:
   nodeSelector:
-    matchLabels:
-      bgp.cilium.io/advertise: "true"
+    matchLabels: {}
   bgpInstances:
     - name: default
       localASN: 65555
