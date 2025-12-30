@@ -42,8 +42,6 @@ spec:
           ingress.cilium.io/loadbalancer-mode: "dedicated"
           # Propagate labels to the hidden LoadBalancer service for IPAM
           service.cilium.io/labels: "lb-ipam: true"
-        labels:
-          bgp.cilium.io/advertise: "true"
     prometheus:
       ingress:
         enabled: true
@@ -56,8 +54,6 @@ spec:
         annotations:
           ingress.cilium.io/loadbalancer-mode: "dedicated"
           service.cilium.io/labels: "lb-ipam: true"
-        labels:
-          bgp.cilium.io/advertise: "true"
 
       prometheusSpec:
         retention: "45d"
