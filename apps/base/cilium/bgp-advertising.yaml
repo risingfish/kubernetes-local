@@ -10,3 +10,9 @@ spec:
       service:
         addresses:
           - LoadBalancerIP
+  selector:
+    matchExpressions:
+      - key: type
+        operator: NotIn
+        values:
+          - never-matches
