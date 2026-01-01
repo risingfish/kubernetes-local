@@ -14,4 +14,4 @@ spec:
     holdTimeSeconds: 90
     keepAliveTimeSeconds: 30
   # Set to > 1 if the router is not directly connected (L3 hop away)
-  ebgpMultihop: 2
+  ebgpMultihop: 1
