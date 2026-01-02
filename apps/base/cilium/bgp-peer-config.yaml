@@ -10,7 +10,6 @@ spec:
       advertisements:
         matchLabels:
           bgp.cilium.io/advertise: "true"
-  authSecretRef: bgp-auth-secret
   gracefulRestart:
     enabled: true
     restartTimeSeconds: 15
