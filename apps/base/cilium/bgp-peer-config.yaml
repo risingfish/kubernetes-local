@@ -10,8 +10,12 @@ spec:
       advertisements:
         matchLabels:
           bgp.cilium.io/advertise: "true"
+  authSecretRef: bgp-auth-secret
+  gracefulRestart:
+    enabled: true
+    restartTimeSeconds: 15
   timers:
-    holdTimeSeconds: 90
-    keepAliveTimeSeconds: 30
+    holdTimeSeconds: 9
+    keepAliveTimeSeconds: 3
   # Set to > 1 if the router is not directly connected (L3 hop away)
   ebgpMultihop: 1
