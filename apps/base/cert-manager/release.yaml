@@ -8,4 +8,4 @@ spec:
   releaseName: cert-manager
   chartRef:
     kind: OCIRepository
-    name: cert-manager-repo
+    name: cert-manager
