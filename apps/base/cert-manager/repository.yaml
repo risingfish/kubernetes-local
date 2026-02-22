@@ -3,6 +3,8 @@ kind: OCIRepository
 metadata:
   name: cert-manager
   namespace: cert-manager
+  finalizers:
+    - finalizers.fluxcd.io/arc
 spec:
   interval: 10m0s
   url: oci://quay.io/jetstack/charts/cert-manager
