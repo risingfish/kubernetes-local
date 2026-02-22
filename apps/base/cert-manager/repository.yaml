@@ -10,3 +10,5 @@ spec:
   url: oci://quay.io/jetstack/charts/cert-manager
   ref:
     tag: 1.19.2
+  secretRef:
+    name: reg-creds
