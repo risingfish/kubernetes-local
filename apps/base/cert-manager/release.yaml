@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cert-manager
+  namespace: cert-manager
+spec:
+  interval: 10m # How often to reconcile the release
+  releaseName: cert-manager
+  chartRef:
+    kind: OCIRepository
+    name: cert-manager-repo
