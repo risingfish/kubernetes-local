@@ -1,0 +1,32 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cert-manager
+  namespace: cert-manager
+spec:
+  releaseName: cert-manager
+  interval: 5m # How often to reconcile the release
+  timeout: 5m0s
+
+  # Ensure the Helm Controller manages and updates Custom Resource Definitions (CRDs).
+  # This is a key feature of Flux's Helm integration.
+  install:
+    remediation:
+        retries: 3
+    crds: CreateReplace
+
+  upgrade:
+    crds: CreateReplace
+
+  chart:
+    spec:
+      chart: cert-manager
+      version: '1.19.2'
+      sourceRef:
+        kind: OciRepository
+        name: cert-manager-repo
+        namespace: cert-manager
+      interval: 12h
+
+  driftDetection:
+    mode: warn
