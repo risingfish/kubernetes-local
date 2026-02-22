@@ -8,3 +8,5 @@ metadata:
 spec:
   interval: 10m0s
   url: oci://quay.io/jetstack/charts/cert-manager
+  ref:
+    tag: 1.19.2
