@@ -9,6 +9,7 @@ spec:
     name: cert-manager
     namespace: cert-manager
   interval: 10m # How often to reconcile the release
+
   install:
     remediation:
       retries: 3
@@ -16,3 +17,7 @@ spec:
 
   upgrade:
     crds: CreateReplace
+
+  values:
+    crds:
+      enabled: true
