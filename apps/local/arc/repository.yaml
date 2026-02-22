@@ -3,8 +3,6 @@ kind: HelmRepository
 metadata:
   name: github-action-runner-controller-repo
   namespace: arc
-  finalizers:
-    - finalizers.fluxcd.io/arc
 spec:
   interval: 10m0s
   url: https://actions-runner-controller.github.io/actions-runner-controller
