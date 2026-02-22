@@ -13,14 +13,12 @@ spec:
 
   upgrade:
     crds: CreateReplace
-
-
   chart:
     spec:
       chart: cert-manager
       version: '>=1.19.2'
       sourceRef:
         kind: OCIRepository
-        name: cert-manager-repo
+        name: cert-manager
         namespace: cert-manager
       interval: 12h
