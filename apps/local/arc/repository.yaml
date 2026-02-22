@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  finalizers:
+    - finalizers.fluxcd.io
+  name: github-action-runner-controller
+  namespace: arc
+spec:
+  interval: 10m0s
+  url: https://actions-runner-controller.github.io/actions-runner-controller

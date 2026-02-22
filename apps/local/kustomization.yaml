@@ -4,6 +4,6 @@ metadata:
   name: local-cluster
   namespace: flux-system
 resources:
+  - ../base/cert-manager
   - ../base/cilium
-#  - ../base/external-dns
-  - ../base/prometheus
+  - prometheus
