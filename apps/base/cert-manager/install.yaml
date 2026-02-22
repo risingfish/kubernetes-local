@@ -23,7 +23,7 @@ spec:
       sourceRef:
         kind: OCIRepository
         name: cert-manager-repo
-        namespace: cert-manager
+        namespace: default
       interval: 12h
 
   values:
