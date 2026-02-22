@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
   finalizers:
-    - finalizers.fluxcd.io
+    - finalizers.fluxcd.io/arc
   name: github-action-runner-controller
   namespace: arc
 spec:
