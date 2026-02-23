@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: github-action-runner-set-repo
+  namespace: arc
+spec:
+  interval: 10m0s
+  url: oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set
+  layerSelector:
+    mediaType: "application/vnd.cncf.helm.chart.content.v1.tar+gzip"
+    operation: copy
+  ref:
+    semver: "^0.13.1"

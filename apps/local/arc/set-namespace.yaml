@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: arc-set
+  labels:
+    environment: local
+  annotations:
+    description: "Namespace for GitHUbs Actions Runner Set"

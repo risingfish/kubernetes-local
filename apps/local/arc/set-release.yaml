@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: arc-saturn-set
+  namespace: arc-set
+spec:
+  chartRef:
+    kind: OCIRepository
+    name: github-action-runner-controller-repo
+    namespace: arc
+  interval: 10m # How often to reconcile the release
+
+  install:
+    remediation:
+      retries: 3
+    crds: CreateReplace
+
+  upgrade:
+    crds: CreateReplace
+
+  values:
+    crds:
+      enabled: true
+    githubConfigUrl: "https://github.com/saturn-time/app.saturntime",
