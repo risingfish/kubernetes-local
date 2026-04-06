@@ -22,3 +22,5 @@ spec:
     crds:
       enabled: true
     githubConfigUrl: "https://github.com/saturn-time/app.saturntime",
+    githubConfigSecret:
+      github_token: ""
